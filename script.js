@@ -1,57 +1,87 @@
-let menuVisible = false;
-//Función que oculta o muestra el menu
-function mostrarOcultarMenu(){
-    if(menuVisible){
-        document.getElementById("nav").classList ="";
-        menuVisible = false;
-    }else{
-        document.getElementById("nav").classList ="responsive";
-        menuVisible = true;
+document.documentElement.classList.add('js');
+
+const menuButton = document.querySelector('.menu-toggle');
+const primaryNavigation = document.querySelector('#site-nav');
+
+function closeNavigation() {
+  if (!menuButton || !primaryNavigation) return;
+  menuButton.setAttribute('aria-expanded', 'false');
+  primaryNavigation.classList.remove('is-open');
+}
+
+if (menuButton && primaryNavigation) {
+  menuButton.addEventListener('click', () => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    primaryNavigation.classList.toggle('is-open', !isOpen);
+  });
+
+  primaryNavigation.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      closeNavigation();
     }
-}
+  });
 
-function seleccionar(){
-    //oculto el menu una vez que selecciono una opcion
-    document.getElementById("nav").classList = "";
-    menuVisible = false;
-}
-//Funcion que aplica las animaciones de las habilidades
-function efectoHabilidades(){
-    var skills = document.getElementById("skills");
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if(distancia_skills >= 300){
-        let habilidades = document.getElementsByClassName("progreso");
-        habilidades[0].classList.add("javascript");
-        habilidades[1].classList.add("htmlcss");
-        habilidades[2].classList.add("photoshop");
-        habilidades[3].classList.add("wordpress");
-        habilidades[4].classList.add("drupal");
-        habilidades[5].classList.add("comunicacion");
-        habilidades[6].classList.add("trabajo");
-        habilidades[7].classList.add("creatividad");
-        habilidades[8].classList.add("dedicacion");
-        habilidades[9].classList.add("proyect");
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeNavigation();
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!primaryNavigation.contains(event.target) && !menuButton.contains(event.target)) {
+      closeNavigation();
     }
+  });
 }
 
+const filterGroup = document.querySelector('.project-filters');
+const filterButtons = [...document.querySelectorAll('[data-filter]')];
+const projects = [...document.querySelectorAll('[data-project]')];
+const filterStatus = document.querySelector('#filter-status');
 
-//detecto el scrolling para aplicar la animacion de la barra de habilidades
-window.onscroll = function(){
-    efectoHabilidades();
-} 
+if (filterGroup && filterButtons.length && projects.length && filterStatus) {
+  filterGroup.hidden = false;
 
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const selectedType = button.dataset.filter;
+      let visibleCount = 0;
 
-const $form = document.querySelector('#form')
-const $buttonMailto = document.querySelector('#mail')
+      filterButtons.forEach((candidate) => {
+        const isSelected = candidate === button;
+        candidate.classList.toggle('is-active', isSelected);
+        candidate.setAttribute('aria-pressed', String(isSelected));
+      });
 
-$form.addEventListener('submit', handleSubmit)
+      projects.forEach((project) => {
+        const isVisible = selectedType === 'all' || project.dataset.projectType === selectedType;
+        project.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
 
-function handleSubmit(event){
-    event.preventDefault()
-    const form = new FormData(this)
-   
-    $buttonMailto.setAttribute('href', `mailto:hectorsandovalmontes21@gmail.com?subject=nombre ${form.get('nombre')} 
-    correo${form.get('email')}&body=${form.get('comentario')}`)
-    $buttonMailto.click()
+      const category = selectedType === 'public'
+        ? 'demos públicas'
+        : selectedType === 'enterprise'
+          ? 'casos empresariales'
+          : 'proyectos';
+      filterStatus.textContent = `Se muestran ${visibleCount} ${category}.`;
+    });
+  });
+}
 
+const revealTargets = [...document.querySelectorAll('[data-reveal]')];
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if ('IntersectionObserver' in window && !prefersReducedMotion) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+  revealTargets.forEach((element) => {
+    element.classList.add('reveal');
+    revealObserver.observe(element);
+  });
 }

@@ -1,425 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182838">
+  <meta name="description" content="Portafolio profesional de Héctor Sandoval Montes, analista de sistemas en León, Guanajuato. Desarrollo Java, integración de APIs, SQL y QA.">
+  <title>Héctor Sandoval Montes — Analista de Sistemas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Imbue:opsz,wght@10..100,400;10..100,500;10..100,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a href="#">HSM</a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <!-- SECCION INICIO -->
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
-                <img src="img/imgProfile.jpg" alt="">
-            </div>
-            <h1>Hector</h1>
-            <h2>Ingeniero Técnologias de La Información Area Entornos Virtuales Negocios Digitales.</h2>
-            <div class="redes">
-                <a href="https://www.facebook.com/hector.darek"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/h%C3%A9ctor-sandoval-montes-8a5896254/"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/hectorsm_hsm/"><i class="fa-brands fa-instagram"></i></a>
-            </div>
+  <main id="main">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <header class="site-header">
+        <a class="wordmark" href="#inicio" aria-label="Héctor Sandoval Montes, inicio">HSM</a>
+        <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="menu-toggle__label">Menú</span>
+          <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#trayectoria">Trayectoria</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </header>
+
+      <h1 class="hero__name" id="hero-title">
+        <span>Héctor Sandoval</span>
+        <span>Montes</span>
+      </h1>
+
+      <div class="hero-band" aria-label="Perfil profesional">
+        <h2 class="hero-band__role">
+          <span class="hero-band__role-main">Analista de Sistemas |</span>
+          <span class="hero-band__role-detail">Desarrollo Java · Integración de APIs · SQL · QA</span>
+        </h2>
+        <p class="hero-band__statement">Integro servicios y trabajo con<br>datos, calidad y soporte de aplicaciones.</p>
+        <div class="hero-band__contact">
+          <a class="text-link" href="#proyectos">Ver proyectos <span aria-hidden="true">→</span></a>
+          <p class="hero-band__location">León, Guanajuato, México</p>
         </div>
+        <span class="hero-band__divider hero-band__divider--one" aria-hidden="true"></span>
+        <span class="hero-band__divider hero-band__divider--two" aria-hidden="true"></span>
+      </div>
     </section>
 
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
-        <div class="contenido-seccion">
-            <h2>Sobre Mí</h2>
-            <p><span>Hola, soy Héctor Sandoval Montes.</span> Egresado de la Ingeniería en Tecnologias de la Información
-                área Entornos Virtuales y Negocios Digitales, con
-                conocimientos básicos en Bases de Datos, Desarrollo de
-                Aplicaciones Web, Mar keting Digital, Diseño digital, Desarrollo
-                de aplicaciones en Realidad Aumentada y desarrollo de
-                Videojuegos 2D y 3D. </p>
+    <section class="projects-opening" id="proyectos" aria-labelledby="projects-title">
+      <div class="section-heading section-heading--projects">
+        <h2 id="projects-title">Proyectos seleccionados</h2>
+        <p class="section-heading__lede">Demos públicas para explorar y casos empresariales descritos con el alcance que puedo compartir.</p>
+      </div>
 
-            <div class="fila">
-                <!-- datos personales -->
-                <div class="col">
-                    <h3>Datos Personales</h3>
-                    <ul>
-                        <li>
-                            <strong>Cumpleaños</strong>
-                            25-03-2001
-                        </li>
-                        <li>
-                            <strong>Teléfono</strong>
-                            (417) 1023234
-                        </li>
-                        <li>
-                            <strong>Email</strong>
-                            hectorsandovalmontes21@gmail.com
-                        </li>
-                        <li>
-                            <strong>Website</strong>
-                            www.example.com
-                        </li>
-                        <li>
-                            <strong>Dirección</strong>
-                            Circuito Heroes de Saltillo # 202A, Los Heroes de Leon, León, Guanajuato.
-                        </li>
-                        <li>
-                            <strong>Cargo</strong>
-                            <span>Técnico en Soporte </span>
-                        </li>
-                    </ul>
-                </div>
+      <div class="project-filters" role="group" aria-label="Filtrar proyectos" hidden>
+        <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+        <button class="project-filter" type="button" data-filter="public" aria-pressed="false">Demos públicas</button>
+        <button class="project-filter" type="button" data-filter="enterprise" aria-pressed="false">Casos empresariales</button>
+      </div>
+      <p class="filter-status" id="filter-status" aria-live="polite">Todos los proyectos están visibles.</p>
 
-                <!-- intereses -->
-                <div class="col">
-                    <h3>Intereses</h3>
-                    <div class="contenedor-intereses">
-                        <div class="interes">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>VIDEOJUEGOS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-headphones"></i>
-                            <span>MUSICA</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-plane"></i>
-                            <span>VIAJAR</span>
-                        </div>
-                        
-                        <div class="interes">
-                            <i class="fa-solid fa-person-hiking"></i>
-                            <span>DEPORTE</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-car"></i>
-                            <span>AUTOS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-camera"></i>
-                            <span>FOTOS</span>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <button>
-                <a href="https://drive.google.com/file/d/1WiMn_aigbpubkie71zZxDqc4spJ5PiaR/view?usp=sharing" download="Curriculum Vitae_Héctor_Sandoval_Montes_Ingeniería_Tecnologías_Información">
-                Descargar CV <i class="fa-solid fa-download"></i></a>
-                <span class="overlay"></span></a>
-            </button>
-        </div>
+      <div class="project-list" id="project-list">
+        <article class="project-entry project-entry--public" data-project data-project-type="public" data-reveal>
+          <figure class="project-entry__visual">
+            <a class="project-entry__image-link" href="https://hectorsm1.github.io/fraccionamiento-la-providencia/index.html" target="_blank" rel="noopener noreferrer" aria-label="Abrir la demo pública de Fraccionamiento La Providencia">
+              <img src="https://hectorsm1.github.io/fraccionamiento-la-providencia/img/portadaDos.webp" alt="Imagen referencial que aparece en la demo pública de Fraccionamiento La Providencia" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Imagen de la demo pública; los inmuebles y recursos visuales son referenciales.</figcaption>
+          </figure>
+          <div class="project-entry__copy">
+            <h3>Fraccionamiento La Providencia</h3>
+            <p class="project-entry__kind">Demo pública · Rediseño 2026</p>
+            <p>Proyecto web inmobiliario con rediseño en 2026. El sitio identifica el proyecto como académico y aclara que los datos de propiedades y las imágenes son referenciales.</p>
+            <a class="arrow-link" href="https://hectorsm1.github.io/fraccionamiento-la-providencia/index.html" target="_blank" rel="noopener noreferrer">Visitar la demo <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--public project-entry--reverse" data-project data-project-type="public" data-reveal>
+          <figure class="project-entry__visual project-entry__visual--logo">
+            <a class="project-entry__image-link" href="https://luminaconecta.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir el sitio público de LUMINA">
+              <img src="https://luminaconecta.com/lumina-logo.jpg" alt="Logotipo de LUMINA del sitio público" loading="lazy" decoding="async">
+            </a>
+          </figure>
+          <div class="project-entry__copy">
+            <h3>Landing y reserva para conferencia</h3>
+            <p class="project-entry__kind">Sitio público · LUMINA</p>
+            <p>La página consultada muestra una landing, información de la ponente, galería, aviso de privacidad y un formulario de reserva con continuación a pago.</p>
+            <p class="project-entry__note">No presento las aportaciones voluntarias como función verificada: no aparecen en el flujo público que revisé.</p>
+            <a class="arrow-link" href="https://luminaconecta.com/" target="_blank" rel="noopener noreferrer">Visitar LUMINA <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--case" data-project data-project-type="enterprise" data-reveal>
+          <div class="project-entry__copy">
+            <h3>Integración de APIs con Java</h3>
+            <p class="project-entry__client">Caso empresarial · NTT DATA · MONEX · 2026</p>
+            <p>Integraciones HTTP y APIs con Java, webhooks POST y verificación HMAC-SHA256. El trabajo incluyó pruebas end-to-end, documentación técnica y Oracle con SQL Developer.</p>
+            <p class="project-entry__note">La integración con Devengo se realizó y probó en sandbox; no fue una implementación productiva. Caso descrito sin código propietario ni material interno.</p>
+          </div>
+          <figure class="case-map" aria-label="Esquema conceptual de las áreas técnicas descritas; no representa la arquitectura interna de MONEX">
+            <figcaption><span>Ámbitos del caso</span><span>Esquema conceptual · sin detalles internos</span></figcaption>
+            <ul class="case-map__items">
+              <li>HTTP y APIs</li>
+              <li>Webhooks POST</li>
+              <li>Verificación HMAC-SHA256</li>
+              <li>Pruebas end-to-end</li>
+            </ul>
+          </figure>
+        </article>
+
+        <article class="project-entry project-entry--case" data-project data-project-type="enterprise" data-reveal>
+          <div class="project-entry__copy">
+            <h3>Calidad y validación de datos</h3>
+            <p class="project-entry__client">Caso empresarial · NTT DATA · BBVA España · 2024–2025</p>
+            <p>Experiencia en modelado y calidad de datos, flujos ETL y pruebas funcionales con PowerDesigner, DataX, Hammurabi y Control-M, además de consultas SQL.</p>
+            <p class="project-entry__note">Caso profesional presentado únicamente en texto; no se incluyen capturas ni información interna de cliente.</p>
+          </div>
+          <figure class="case-map" aria-label="Esquema conceptual de las herramientas y prácticas descritas; no representa sistemas internos de BBVA">
+            <figcaption><span>Herramientas y prácticas</span><span>Esquema conceptual · sin datos de cliente</span></figcaption>
+            <ul class="case-map__items">
+              <li>Modelado · PowerDesigner</li>
+              <li>Calidad · Hammurabi</li>
+              <li>ETL · DataX</li>
+              <li>Control-M · SQL · pruebas funcionales</li>
+            </ul>
+          </figure>
+        </article>
+      </div>
     </section>
 
-    <!-- SECCION SKILLS -->
-    <section class="skills" id="skills">
-        <div class="contenido-seccion">
-            <h2>Skills</h2>
-            <div class="fila">
-                <!-- Technical Skill -->
-                <div class="col">
-                    <h3>Mis Habilidades.</h3>
-                    <div class="skill">
-                        <span>Javascript</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>58%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>SQL</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>65%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Lenguaje R</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>55%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Redes</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>55%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>HTML & CSS</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Photoshop</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>GIMP</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Wordpress</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>81%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Professional Skills -->
-                <div class="col">
-                    <h3>Habilidades Profesionales</h3>
-                    <div class="skill">
-                        <span>Comunicación</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Trabajo en Equipo</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Creatividad</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>88%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Dedicación</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Proyect Management</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="career-section" id="trayectoria" aria-labelledby="career-title">
+      <div class="section-heading">
+        <h2 id="career-title">Trayectoria profesional</h2>
+        <p class="section-heading__lede">Experiencia en integración, soporte de aplicaciones, mantenimiento web y calidad de datos.</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__entry" data-reveal>
+          <span class="timeline__date">2026</span>
+          <div class="timeline__body">
+            <h3>Integración de APIs con Java</h3>
+            <p class="timeline__organization">NTT DATA · MONEX</p>
+            <p>Integraciones HTTP y APIs, webhooks POST, verificación HMAC-SHA256, pruebas end-to-end y documentación técnica. Oracle y SQL Developer. Devengo se validó en sandbox, no en producción.</p>
+          </div>
+        </li>
+        <li class="timeline__entry" data-reveal>
+          <span class="timeline__date">2025–2026</span>
+          <div class="timeline__body">
+            <h3>Soporte de aplicaciones</h3>
+            <p class="timeline__organization">NTT DATA · TELCEL</p>
+            <p>Resolución de incidencias, consultas SQL, uso de DBeaver y elaboración de reportes operativos.</p>
+          </div>
+        </li>
+        <li class="timeline__entry" data-reveal>
+          <span class="timeline__date">2025</span>
+          <div class="timeline__body">
+            <h3>Mantenimiento y actualización de contenidos web</h3>
+            <p class="timeline__organization">NTT DATA · PROA / CHOPO</p>
+            <p>Actualización de contenidos en Magento con HTML y CSS.</p>
+          </div>
+        </li>
+        <li class="timeline__entry" data-reveal>
+          <span class="timeline__date">2024–2025</span>
+          <div class="timeline__body">
+            <h3>Modelado y calidad de datos</h3>
+            <p class="timeline__organization">NTT DATA · BBVA España</p>
+            <p>Trabajo con PowerDesigner, DataX, Hammurabi, Control-M, ETL y pruebas funcionales.</p>
+          </div>
+        </li>
+        <li class="timeline__entry" data-reveal>
+          <span class="timeline__date">2023–2024</span>
+          <div class="timeline__body">
+            <h3>Soporte técnico</h3>
+            <p class="timeline__organization">Poder Judicial del Estado de Guanajuato</p>
+            <p>Mantenimiento informático y atención de incidencias.</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <!-- SECCION CURRICULUM -->
-    <section id="curriculum" class="curriculum">
-        <div class="contenido-seccion">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
-                    <h3>Educación</h3>
-                    <div class="item izq">
-                        <h4>Título: Ingeniería: Entornos Virtuales y Negocios Digitales.</h4>
-                        <span class="casa">Universidad Tecnológica de León</span>
-                        <span class="fecha">En Acámbaro, Septiembre 2021 - Abril 2023.</span>
-                        <p><ul>
-                            <li>Promedio general de 9.13</li>
-                            <li>Estudios complementarios para la Gestión de Proyectos</li>
-                        </ul> </p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Título: Técnico Superior Universitario. Tecnologias de la Información área Entornos Virtuales y Negocios Digitales</h4>
-                        <span class="casa">Universidad Tecnológica de León</span>
-                        <span class="fecha">En Acámbaro, Septiembre 2019 - Agosto 2021</span>
-                        <p><ul>
-                            <li>Promedio general de 9.0</li>
-                            <li>Estudios complementarios en Tecnologías de la Información.</li>
-                            <li>Estudios en los Entornos Virtuales y Negocios Digitales.</li>
-                        </ul> </p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                </div>
+    <section class="stack-section" id="areas-tecnicas" aria-labelledby="stack-title">
+      <div class="section-heading section-heading--dark">
+        <h2 id="stack-title">Áreas técnicas</h2>
+        <p class="section-heading__lede">Herramientas y prácticas presentes en mi experiencia.</p>
+      </div>
 
-                <div class="col derecha">
-                    <h3>Experiencia de trabajo</h3>
-                    <div class="item der">
-                        <h4>Técnico en Soporte</h4>
-                        <span class="casa">Poder Judicial del Estado de Guanajuato</span>
-                        <span class="fecha">León, Junio 2023 - Actual</span>
-                        <p><ul>
-                            <li>Monitoreé y mantuve la red informática para garantizar un rendimiento óptimo y la seguridad de la información.</li>
-                            <li>Interactué con proveedores de servicios y productos tecnológicos para garantizar la adquisición de equipos.</li>
-                            <li>Proporcioné asistencia técnica a usuarios internos y externos, resolviendo eficazmente problemas de hardware y software.</li>
-                            <li>Colaboré en la implementación y actualización de sistemas.</li>
-                        </ul> </p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Diseño, desarrollo e Implementación de Aplicación Web en React.</h4>
-                        <span class="casa">Comisión Federal de Electricidad CFE</span>
-                        <span class="fecha">Acámbaro, Enero 2023 - Junio 2023</span>
-                        <p><ul>
-                            <li> Diseñé, desarrollé e implemente una aplicación web con React, para la empresa Comision Federal de Electricidad.
-                            </li>
-                            <li>Actualicé y configuré los Diagramas Unifilares del Sistema SIAD para redes generales de distribución aero de media tensión.</li>
-                        </ul> </p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Diseño y desarrollo de Aplicación Web Publicitaria.</h4>
-                        <span class="casa">Mérica Construcciones S.A de C.V</span>
-                        <span class="fecha">Acámbaro, Mayo 2021 - Agosto 2021</span>
-                        <p>
-                            <UL>
-                                <li>Diseñé y desarrollé una aplicación web publicitaria, para la empresa de bienes raíces "La Providencia".</li>
-                                <li>Implemente pagina web publicitaria mediante un host gratuito.</li>
-                            </UL>
-                        </p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <dl class="stack-list">
+        <div class="stack-list__row" data-reveal>
+          <dt>Desarrollo e integración</dt>
+          <dd>Java · HTTP · APIs · Webhooks POST · HMAC-SHA256</dd>
         </div>
+        <div class="stack-list__row" data-reveal>
+          <dt>Datos y consultas</dt>
+          <dd>Oracle · SQL · SQL Developer · DBeaver · ETL</dd>
+        </div>
+        <div class="stack-list__row" data-reveal>
+          <dt>Calidad y validación</dt>
+          <dd>Pruebas end-to-end · pruebas funcionales · PowerDesigner · DataX · Hammurabi</dd>
+        </div>
+        <div class="stack-list__row" data-reveal>
+          <dt>Operación y soporte</dt>
+          <dd>Control-M · soporte de aplicaciones · atención de incidencias · reportes operativos</dd>
+        </div>
+        <div class="stack-list__row" data-reveal>
+          <dt>Web y contenidos</dt>
+          <dd>Magento · HTML · CSS</dd>
+        </div>
+      </dl>
     </section>
 
-    <!-- SECCION PORTFOLIO -->
-    <section id="portfolio" class="portfolio">
-        <div class="contenido-seccion">
-            <h2>PORTFOLIO</h2>
-            <div class="galeria">
-                <div class="proyecto">
-                    <img src="img/portafolio1.png" alt="" width="500" height="250">
-                    <div class="overlay">
-                        <h3>Página Publicitaria</h3>
-                        <a href="https://hectorsm1.github.io/fraccionamiento-la-providencia/index.html"> <p> Conoce más...</p></a>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/portafolio2.png" alt="" width="500" height="350" >
-                    <div class="overlay">
-                        <h3>Maquetado Mobile </h3>
-                        <a href="https://www.canva.com/design/DAF6Mqd4SM4/Lo28svp9_wb-R9ZgR8XvUw/watch"><p>clic..</p></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="about-section" id="sobre-mi" aria-labelledby="about-title">
+      <div class="about-section__intro" data-reveal>
+        <h2 id="about-title">Sobre mí</h2>
+        <p>Soy Héctor Sandoval Montes, analista de sistemas en León, Guanajuato. Mi experiencia combina integración de servicios, trabajo con datos, QA, soporte de aplicaciones y mantenimiento web.</p>
+        <p>En este portafolio distingo las demos que se pueden visitar de los casos empresariales que solo puedo describir. No publico código ni materiales internos de clientes.</p>
+      </div>
+      <div class="education" data-reveal>
+        <h3>Formación académica</h3>
+        <p class="education__institution">Universidad Tecnológica de León</p>
+        <ul>
+          <li>
+            <span>Ingeniería en Tecnologías de la Información, área Entornos Virtuales y Negocios Digitales</span>
+            <span class="education__date">2021–2023</span>
+          </li>
+          <li>
+            <span>Técnico Superior Universitario en Tecnologías de la Información, área Entornos Virtuales y Negocios Digitales</span>
+            <span class="education__date">2019–2021</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- SECCION CONTACTO -->
-    <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <h2>CONTACTO</h2>
-            <div class="fila">
-                <!-- Formulario -->
-                <div class="col">
-                    <form id="form" action="" class="form">
-                        <div class="form-group">
-                            <label for="nombre"> Nombre completo: </label>
-                            <input type="text" id="nombre" name="nombre" class="form-control" id="exampleFormControlInput1" required placeholder="Nombre completo" >
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Correo electrónico: </label>
-                          <input type="email" id="email" name="email" class="form-control" id="exampleFormControlInput1" required placeholder="name@example.com">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Comentario: </label>
-                          <textarea class="form-control" id="comentario" name="comentario" id="exampleFormControlTextarea1" required placeholder="Escriba su comentario." rows="3"></textarea>
-                        </div>
-                        <div class=" row justify-content-center py-3">
-                            <button type="submit" class="btn btn-success" > Enviar. <i class="fa-solid fa-paper-plane"></i>
-                                <span class="overlay"></span></button>
-                        </div>
-                      </form>
-                      <a href="mailto:hectorsandovalmontes21@gmail.com" id="mail"></a>
-                </div>
-                <!-- Mapa -->
-                <div class="col">
-                    <img src="img/ubicacion.png" alt="">
-                    <div class="info">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Heroes de Saltillo #202-A
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen"></i>
-                                Llamanos: 417 102 3234 
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                Email: hectorsandovalmontes21@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="contact-section" id="contacto" aria-labelledby="contact-title">
+      <div class="contact-section__copy" data-reveal>
+        <h2 id="contact-title">Hablemos</h2>
+        <p>Para oportunidades en desarrollo, análisis, QA, soporte de aplicaciones o proyectos freelance:</p>
+      </div>
+      <div class="contact-section__links" data-reveal>
+        <a class="contact-link" href="mailto:hectorsandovalmontes21@gmail.com">hectorsandovalmontes21@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="contact-link" href="https://www.linkedin.com/in/h%C3%A9ctor-sandoval-montes-8a5896254/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <p>León, Guanajuato, México</p>
+      </div>
     </section>
+  </main>
 
-    <!-- footer -->
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <a href="https://www.facebook.com/hector.darek"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/h%C3%A9ctor-sandoval-montes-8a5896254/"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/hectorsm_hsm/"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer class="site-footer">
+    <a class="site-footer__mark" href="#inicio" aria-label="Volver al inicio">HSM</a>
+    <p>Héctor Sandoval Montes · León, Guanajuato, México</p>
+    <a href="#inicio">Volver al inicio ↑</a>
+  </footer>
 </body>
 </html>
